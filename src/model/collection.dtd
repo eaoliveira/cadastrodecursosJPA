@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!ELEMENT collection (curso*) >
+<!ELEMENT curso (id, nome, descricao) >
+<!ELEMENT id (#PCDATA) >
+<!ELEMENT nome (#PCDATA) >
+<!ELEMENT descricao (#PCDATA) >
