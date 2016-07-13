@@ -1,13 +1,18 @@
 //
-// Este arquivo foi gerado pela Arquitetura JavaTM para Implementação de Referência (JAXB) de Bind XML, v2.2.8-b130911.1802 
+// Este arquivo foi gerado pela Arquitetura JavaTM para Implementaï¿½ï¿½o de Referï¿½ncia (JAXB) de Bind XML, v2.2.8-b130911.1802 
 // Consulte <a href="http://java.sun.com/xml/jaxb">http://java.sun.com/xml/jaxb</a> 
-// Todas as modificações neste arquivo serão perdidas após a recompilação do esquema de origem. 
-// Gerado em: 2016.07.08 às 07:11:35 PM BRT 
+// Todas as modificaï¿½ï¿½es neste arquivo serï¿½o perdidas apï¿½s a recompilaï¿½ï¿½o do esquema de origem. 
+// Gerado em: 2016.07.08 ï¿½s 07:11:35 PM BRT 
 //
 
 
 package model;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -25,8 +30,12 @@ import javax.xml.bind.annotation.XmlType;
     "descricao"
 })
 @XmlRootElement(name = "curso")
-public class Curso {
 
+@Entity
+public class Curso {
+	@Id
+	@Column(name="idCurso")
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
     @XmlElement(required = true)
     protected Integer id;
     @XmlElement(required = true)
@@ -35,7 +44,7 @@ public class Curso {
     protected String descricao;
 
     /**
-     * Obtém o valor da propriedade id.
+     * Obtï¿½m o valor da propriedade id.
      * 
      * @return
      *     possible object is
@@ -59,7 +68,7 @@ public class Curso {
     }
 
     /**
-     * Obtém o valor da propriedade nome.
+     * Obtï¿½m o valor da propriedade nome.
      * 
      * @return
      *     possible object is
@@ -83,7 +92,7 @@ public class Curso {
     }
 
     /**
-     * Obtém o valor da propriedade descricao.
+     * Obtï¿½m o valor da propriedade descricao.
      * 
      * @return
      *     possible object is

@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+import javax.ejb.EJB;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -16,7 +17,8 @@ import dao.CursoDao;
 @WebServlet("/excluiCurso")
 public class ExcluiCurso extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-
+	@EJB
+	private CursoDao dao;
 	private Logger log = Logger.getLogger("ExcluiCurso");
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -24,7 +26,6 @@ public class ExcluiCurso extends HttpServlet {
 		Mensagem msg = new Mensagem();
 		String[] ids = request.getParameterValues("curid");
 
-		CursoDao dao = CursoDao.getInstance();
 		
 		if (ids == null) {
 			msg.setTexto("Não existe item selecionado!");

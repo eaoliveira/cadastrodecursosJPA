@@ -1,6 +1,8 @@
 package tela;
 
 import java.io.IOException;
+
+import javax.ejb.EJB;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -11,11 +13,12 @@ import dao.CursoDao;
 @WebServlet("/listaCurso")
 public class ListaCurso extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-
+	@EJB
+	private CursoDao dao;
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		
-		request.getSession().setAttribute("curso", CursoDao.getInstance().getCurso());
+		request.getSession().setAttribute("curso", dao.getCurso());
 		response.sendRedirect("listaCurso.jsp");
 	}
 
